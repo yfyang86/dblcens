@@ -20,7 +20,6 @@ Description: Use EM algorithm to compute the NPMLE of CDF and also the
         calculated (but may be slow).
 Maintainer: Yifan Yang <yfyang.86@hotmail.com>
 URL: https://github.com/yfyang86/dblcens/
-URL: https://github.com/yfyang86/dblcens/issues/
 License: GPL (>= 2)
 Repository: CRAN
 NeedsCompilation: yes
