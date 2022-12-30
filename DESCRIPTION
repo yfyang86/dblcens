@@ -1,8 +1,13 @@
 Package: dblcens
 Title: Compute the NPMLE of distribution from doubly censored data
-Version: 1.1.7
-Depends: R (>= 2.15.0)
-Author: Mai Zhou, Li Lee, Kun Chen.
+Version: 1.1.8
+Depends: R (>= 3.5)
+Authors@R:  c(
+            person("Mai", "Zhou", role = c("aut")),
+            person("Li", "Lee", role = "aut"),
+            person("Kun", "Chen", role = "aut"),
+            person("Yifan", "Yang",  role = c("aut", "cre", "cph"),
+                   email = "yfyang.86@hotmail.com")) 
 Description: Use EM algorithm to compute the NPMLE of CDF and also the
         two censoring distributions. For doubly censored data (as
         described in Chang and Yang (1987) Ann. Stat. 1536-47). You can
@@ -12,8 +17,8 @@ Description: Use EM algorithm to compute the NPMLE of CDF and also the
         intervals for probability or quantile via empirical likelihood
         ratio theorem. Influence function of hat F may also be
         calculated (but may be slow).
-Maintainer: Mai Zhou <mai@ms.uky.edu>
+Maintainer: Yifan Yang <yfyang.86@hotmail.com>
 License: GPL (>= 2)
-Packaged: 2012-12-16 22:48:26 UTC; mai
 Repository: CRAN
-Date/Publication: 2012-12-17 05:50:03
+NeedsCompilation: yes
+Date: 2022-12-30 11:11:00
