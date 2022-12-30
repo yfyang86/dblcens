@@ -34,9 +34,11 @@ void urnew010(
     double z[], sur[], jum[], zext[], wext[];
     char *dup[];
     */
-    int i, j, h, mm, nn, en= *r, n= *s, el= *rs, num, *k, *dadd, m= *max;
-     int *d01;
-     double u, *o, *w, *wadd, *zadd, *w01, *z01, *w2, a= *err;
+     int i, j, h, mm, nn, en= *r, n= *s, el= *rs, num, m= *max;
+     double u, a= *err;
+     int *d01, *k, *dadd;
+     double  *o, *w, *wadd, *zadd, *w01, *z01, *w2;
+     
 
       k    = INT_MALLOC_(el+1);
       o    = DOUBLE_MALLOC_(n+1);

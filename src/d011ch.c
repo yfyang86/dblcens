@@ -46,9 +46,9 @@ void d011ch(
   K = *pK;
   konst = *pkonst;
 
-  k = INT_MALLOC_(el+1);
-  o = DOUBLE_MALLOC_(n+1);
-  w = DOUBLE_MALLOC_(n+1);
+  k    = INT_MALLOC_(el+1);
+  o    = DOUBLE_MALLOC_(n+1);
+  w    = DOUBLE_MALLOC_(n+1);
   wadd = DOUBLE_MALLOC_(n+el+1);
   zadd = DOUBLE_MALLOC_(n+el+1);
   dadd = INT_MALLOC_(n+el+1);
@@ -673,6 +673,11 @@ void selfbeforeT(
   double sum1, sum2, sum3, sum4;
   double numerator, w1=0.0;
   int h, i, j, l;
+  double _SK = K;
+  int _Sn = n;
+
+  _SK = _SK+1.;
+  _Sn ++;
 
   value=dist[count-1];
  
@@ -696,7 +701,7 @@ void selfbeforeT(
   theta     = DOUBLE_MALLOC_(size1+1);
   Ftheta    = DOUBLE_MALLOC_(size1+1);
   newFtheta = DOUBLE_MALLOC_(size1+1);
-  extFtheta = DOUBLE_MALLOC_(size1+1);
+  extFtheta = DOUBLE_MALLOC_(size1+2);
 
   if(size1 == 0)
   {  
@@ -836,7 +841,6 @@ void selfbeforeT(
       }
     }
   } 
-  K++;n++;
   free(newtime);
   free(newd);
   free(newdist);
@@ -844,7 +848,6 @@ void selfbeforeT(
   free(Ftheta);
   free(newFtheta);
   free(extFtheta);
-
 }
 
 /*****************************************************************
