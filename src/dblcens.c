@@ -6,7 +6,7 @@
 extern void d011ch(
   double * z, 
   int * d, 
-  char *dup[], 
+  int *dup, 
   double *sur, 
   double *jum, 
   int * max, 
@@ -24,7 +24,7 @@ extern void d011ch(
   double * llratio);
 
 extern void urnew010(
-    double * z, int * d, char *dup[], double * sur, double * jum, int * max, 
+    double * z, int * d, int *dup, double * sur, double * jum, int * max, 
     double * err, int * r, int * s, int * rs, 
     double * zext, int * dext, double * wext);
 

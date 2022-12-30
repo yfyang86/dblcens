@@ -24,7 +24,7 @@
    rs is length of d[d=2] 
    zext, dext, wext are for output extended data, they have length s+rs  */
 void urnew010(
-    double * z, int * d, char *dup[], double * sur, double * jum, int * max, 
+    double * z, int * d, int *dup, double * sur, double * jum, int * max, 
     double * err, int * r, int * s, int * rs, 
     double * zext, int * dext, double * wext){    
     /*
@@ -54,7 +54,7 @@ void urnew010(
                              /* this block is to compute w. After  */
         j=0;                 /* that, length(w) should = length(z) */
         for(i=1; i<en; i++)
-            if(*dup[i] == 'T')  /* am I compare pointer with int? dup[i]... */
+            if(dup[i] == 1)  /* am I compare pointer with int? dup[i]... */
                w[j]+=1;         /* SB-95                                    */
             else
                ++j; 

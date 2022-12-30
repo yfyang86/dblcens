@@ -18,7 +18,7 @@
 void d011ch(
   double * z, 
   int * d, 
-  char *dup[], 
+  int * dup, 
   double *sur, 
   double *jum, 
   int * max, 
@@ -66,7 +66,7 @@ void d011ch(
   j=0;
   for(i=1; i<en; i++)
   {
-    if(*dup[i] == 'T')
+    if(dup[i] == 1)
       w[j]+=1;
     else
       ++j; 

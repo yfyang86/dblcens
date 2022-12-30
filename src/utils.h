@@ -117,7 +117,7 @@ void selfbeforeT(
  * - zext, dext, wext are for output extended data, they have length s+rs 
  * */
 void urnew010(
-    double * z, int * d, char *dup[], double * sur, double * jum, int * max, 
+    double * z, int * d, int *dup, double * sur, double * jum, int * max, 
     double * err, int * r, int * s, int * rs, 
     double * zext, int * dext, double * wext);
 
@@ -133,7 +133,7 @@ void urnew010(
 void d011ch(
   double * z, 
   int * d, 
-  char *dup[], 
+  int * dup, 
   double *sur, 
   double *jum, 
   int * max, 

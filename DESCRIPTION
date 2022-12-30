@@ -3,7 +3,7 @@ Title: Compute the NPMLE of distribution from doubly censored data
 Version: 1.1.8
 Depends: R (>= 3.5)
 Suggests: testthat (>= 3.0.0)
-Authors@R:  c(
+Authors@R: c(
             person("Mai", "Zhou", role = c("aut")),
             person("Li", "Lee", role = "aut"),
             person("Kun", "Chen", role = "aut"),
