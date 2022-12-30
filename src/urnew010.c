@@ -13,13 +13,7 @@
 /* #include <stdio.h>  */ 
 /* #include <math.h>   */ 
 #include <stdlib.h>
-
-void urnew010(z, d, dup, sur, jum, max, err, r, s, rs, zext, dext, wext)
-int *max, *r, *s, *rs;
-int d[], dext[];
-double *err;
-double z[], sur[], jum[], zext[], wext[];
-char *dup[];        /* I used char *dup and char dup[], they do not work! */ 
+#include "utils.h"
 
 /* z, d, max and err are z012, d012, maxiter and error in Splus.
    dup, sur, jum  are as in Splus.
@@ -29,19 +23,27 @@ char *dup[];        /* I used char *dup and char dup[], they do not work! */
    s is the length of d. (and z)
    rs is length of d[d=2] 
    zext, dext, wext are for output extended data, they have length s+rs  */
-
-{    int i, j, h, mm, nn, en= *r, n= *s, el= *rs, num, *k, *dadd, m= *max;
+void urnew010(
+    double * z, int * d, char *dup[], double * sur, double * jum, int * max, 
+    double * err, int * r, int * s, int * rs, 
+    double * zext, int * dext, double * wext){    
+    /*
+    int *max, *r, *s, *rs;
+    int d[], dext[];
+    double *err;
+    double z[], sur[], jum[], zext[], wext[];
+    char *dup[];
+    */
+    int i, j, h, mm, nn, en= *r, n= *s, el= *rs, num, *k, *dadd, m= *max;
      int *d01;
      double u, *o, *w, *wadd, *zadd, *w01, *z01, *w2, a= *err;
-     double ma(); 
-     void wur();   
 
-      k=(void *)malloc((el+1)*sizeof(int));
-      o=(void *)malloc((n+1)*sizeof(double));
-      w=(void *)malloc((n+1)*sizeof(double));
-      wadd=(void *)malloc((n+el+1)*sizeof(double));
-      zadd=(void *)malloc((n+el+1)*sizeof(double));
-      dadd=(void *)malloc((n+el+1)*sizeof(int));
+      k    = INT_MALLOC_(el+1);
+      o    = DOUBLE_MALLOC_(n+1);
+      w    = DOUBLE_MALLOC_(n+1);
+      wadd = DOUBLE_MALLOC_(n+el+1);
+      zadd = DOUBLE_MALLOC_(n+el+1);
+      dadd = INT_MALLOC_(n+el+1);
 
       for(i=0;i<n; i++) { 
            w[i]=1.0;
@@ -98,10 +100,10 @@ char *dup[];        /* I used char *dup and char dup[], they do not work! */
         k[i]= '\0';
  
       
-      w01=(void *)malloc((mm-el+1)*sizeof(double));
-      z01=(void *)malloc((mm-el+1)*sizeof(double));
-      d01=(void *)malloc((mm-el+1)*sizeof(int));
-      w2=(void *)malloc((el+1)*sizeof(double));
+      w01 = DOUBLE_MALLOC_(mm-el+1);
+      z01 = DOUBLE_MALLOC_(mm-el+1);
+      d01 = INT_MALLOC_(mm-el+1);
+      w2  = DOUBLE_MALLOC_(el+1);
 
 
                             /* This block is to separate data according */
